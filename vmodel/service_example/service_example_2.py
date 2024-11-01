@@ -1,4 +1,4 @@
-from protocol.simpler_protocol import cleanup_func, get_service_info_func, prepare_func, service_func
+from vmodel.protocol.simpler_protocol import cleanup_func, get_service_info_func, prepare_func, service_func
 
 @service_func('func_1','service_2')
 def my_service_func_1(a:int, b:int):

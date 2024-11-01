@@ -1,7 +1,7 @@
 from importlib import import_module
 
-from protocol.service_protocol import ServiceProtocol
-from protocol.service_registory import get_service_protocol
+from vmodel.protocol.service_protocol import ServiceProtocol
+from vmodel.protocol.service_registory import get_service_protocol
 
 class VModel:
     def __init__(self, config:list):

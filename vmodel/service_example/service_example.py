@@ -1,5 +1,5 @@
 # 这是一个标准协议的实例
-from protocol.standard_protocol import cleanup_func, get_service_info_func, load_func, prepare_func, test_func, unload_func, service_func
+from vmodel.protocol.standard_protocol import cleanup_func, get_service_info_func, load_func, prepare_func, test_func, unload_func, service_func
 
 # 如果使用简化协议 请导入 from protocol.simpler_protocol import cleanup_func, get_service_info_func, prepare_func, service_func
 

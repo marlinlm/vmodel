@@ -31,9 +31,10 @@
 实现协议的方式需要按协议要求编写方法，并为方法加上协议里相关方法的@注解。注解的方式如下
 ```python
 # 这是一个标准协议的实例
-from protocol.standard_protocol import cleanup_func, get_service_info_func, load_func, prepare_func, test_func, unload_func, service_func
+from vmodel.protocol.standard_protocol import cleanup_func, get_service_info_func, load_func, prepare_func, test_func, unload_func, service_func
 
-# 如果使用简化协议 请导入 from protocol.simpler_protocol import cleanup_func, get_service_info_func, prepare_func, service_func
+# 如果使用简化协议 请导入 
+# vmodel.from protocol.simpler_protocol import cleanup_func, get_service_info_func, prepare_func, service_func
 
 # 服务接口注解
 @service_func('func_1','service_1')
@@ -268,21 +269,25 @@ def my_cleanup_func():
 
 ```python
 # 导入vmodel包
-import vmodel as vmodel
+from vmodel.vmodel import VModel
     
 if __name__ == '__main__':
     # 创建VModel类
-    vm = vmodel.VModel( # 传入所有服务的清单（主要是包名）
-                        [
-                            {
-                                'package':'service_example.service_example',
-                            },{
-                                'package':'service_example.service_example_2'
-                            }
-                        ])
+    vm = VModel( # 传入所有服务的清单（主要是包名）
+                [
+                    {
+                        'package':'service_example.service_example',
+                    },{
+                        'package':'service_example.service_example_2'
+                    }
+                ])
     # 调用run_and_dump方法，第一个参数是服务名，第二个参数是方法名，第三个参数是以dict格式表示的接口调用参数。注意dict里的key要与服务接口的参数名保持一致。
     print('调用服务完成，结果：',vm.run_and_dump('service_1', 'func_1', {'a':1,'b':2}))
     print('调用服务完成，结果：',vm.run_and_dump('service_2', 'func_1', {'a':1,'b':2}))
 ```
 
 ## 安装vmodel
+
+下载 vmodel：
+
+安装 

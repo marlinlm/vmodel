@@ -1,4 +1,4 @@
-from protocol.service_protocol import ServiceProtocol
+from vmodel.protocol.service_protocol import ServiceProtocol
 
 
 service_registries = {}

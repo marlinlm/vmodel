@@ -1,6 +1,6 @@
 from typing import Callable
-from protocol.service_protocol import ServiceProtocol
-from protocol.service_registory import check_service_exists, get_service_protocol, register_service
+from vmodel.protocol.service_protocol import ServiceProtocol
+from vmodel.protocol.service_registory import check_service_exists, get_service_protocol, register_service
 
 class StandardProtocol(ServiceProtocol):
     def __init__(self, name):

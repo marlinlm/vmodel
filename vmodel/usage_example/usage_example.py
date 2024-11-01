@@ -2,12 +2,12 @@ from os.path import dirname
 import sys
 
 sys.path.append(dirname(dirname(__file__)))
-import vmodel as vmodel
+from vmodel.vmodel import VModel
 
 
     
 if __name__ == '__main__':
-    vm = vmodel.VModel([
+    vm = VModel([
                             {
                                 'package':'service_example.service_example',
                             },{
