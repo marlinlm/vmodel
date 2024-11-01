@@ -297,9 +297,9 @@ if __name__ == '__main__':
     vm = VModel( # 传入所有服务的清单（主要是包名）
                 [
                     {
-                        'package':'service_example.service_example',
+                        'package':'vmodel.service_example.service_example',
                     },{
-                        'package':'service_example.service_example_2'
+                        'package':'vmodel.service_example.service_example_2'
                     }
                 ])
     # 调用run_and_dump方法，第一个参数是服务名，第二个参数是方法名，第三个参数是以dict格式表示的接口调用参数。注意dict里的key要与服务接口的参数名保持一致。
