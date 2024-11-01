@@ -1,10 +1,12 @@
 # vmodel
 一个用于对所有后端模型对接的接口规范。
 
-# 后端服务的适配
+
+## 后端服务的适配
 目前有两种协议：标准协议及简化协议
 
-## 标准协议规（standard_protocol）定了每个后端服务必须实现以下接口
+### 标准协议（standard_protocol）
+规定了每个后端服务必须实现以下接口:
 -	信息获取接口（@get_service_info_func）：可在获取后端服务的名称、服务功能描述、资源需求以及功能列表。功能列表包括功能列表名称、接口映射方法、功能描述及包含参数具体定义和描述的参数列表。其中功能列表中的每一项为应用程序可单独使用的服务，其功能描述及参数信息将作为应用程序进行动态任务规划的基础。服务的资源需求信息包含cpu、内存、显卡等资源的限制，用于后端服务管理。
 
 - 初始化接口（@prepare_func）：初始化阶段为后端服务检测相应资源、准备数据集和模型等操作。
@@ -19,13 +21,32 @@
 
 -	清理接口（@cleanup_func）：删除服务所下载的所有文件。
 
-## 简化协议（smpler_protocol）仅要求服务实现以下接口：
+### 简化协议（smpler_protocol）
+仅要求服务实现以下接口：
 - 信息获取接口（@get_service_info_func）
 - 初始化接口（@prepare_func）
 - 业务服务接口（@service_func）
 - 清理接口（@cleanup_func）
 
 使用简化协议，初始化接口需要负责模型及数据文件下载及模型数据加载到内存。清理接口需要卸载内存及删除文件。
+
+
+
+## 安装
+
+直接克隆代码：
+
+https://github.com/marlinlm/vmodel.git
+安装包就在 vmodel/dist/下。
+
+或者下载安装包：
+
+https://github.com/marlinlm/vmodel/blob/main/dist/vmodel-0.0.1-py3-none-any.whl
+
+安装 
+```bash
+python -m pip install dist/vmodel-0.0.1-py3-none-any.whl --force-reinstall
+```
 
 ## 如何编写后端服务接口
 实现协议的方式需要按协议要求编写方法，并为方法加上协议里相关方法的@注解。注解的方式如下
@@ -285,9 +306,3 @@ if __name__ == '__main__':
     print('调用服务完成，结果：',vm.run_and_dump('service_1', 'func_1', {'a':1,'b':2}))
     print('调用服务完成，结果：',vm.run_and_dump('service_2', 'func_1', {'a':1,'b':2}))
 ```
-
-## 安装vmodel
-
-下载 vmodel：
-
-安装 
