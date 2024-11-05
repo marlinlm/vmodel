@@ -21,7 +21,7 @@
 
 -	清理接口（@cleanup_func）：删除服务所下载的所有文件。
 
-### 简化协议（smpler_protocol）
+### 简化协议（simpler_protocol）
 仅要求服务实现以下接口：
 - 信息获取接口（@get_service_info_func）
 - 初始化接口（@prepare_func）
@@ -30,7 +30,12 @@
 
 使用简化协议，初始化接口需要负责模型及数据文件下载及模型数据加载到内存。清理接口需要卸载内存及删除文件。
 
+### 极简协议（wabi_protocol）
+仅要求服务实现以下接口：
+- 信息获取接口（@get_service_info_func）
+- 业务服务接口（@service_func）
 
+使用极简协议，需要在业务服务接口实现所有模型加载、数据加载及卸载等逻辑。
 
 ## 安装
 
