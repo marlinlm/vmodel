@@ -1,18 +1,18 @@
 from vmodel.protocol.wabi_protocol import get_service_info_func, service_func
 
-@service_func('func_3','service_1')
+@service_func('func_3','service_3')
 def my_service_func_1(a:int, b:int):
-    print("这是service_2.my_service_func_1")
+    print("这是service_3.my_service_func_1")
     return a+b
 
-@service_func('func_4','service_2')
+@service_func('func_4','service_3')
 def my_service_func_2(a:str, b:str):
-    print("这是service_2.my_service_func_2")
+    print("这是service_3.my_service_func_2")
     return a + ' ' + b
 
 @get_service_info_func('service_3')
 def my_get_info():
-    print("这是service_2.my_get_info")
+    print("这是service_3.my_get_info")
     return {
                 'service_name':'服务名称',
                 'service_desc':'服务描述',
