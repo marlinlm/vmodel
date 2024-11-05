@@ -1,16 +1,16 @@
-from vmodel.protocol.simpler_protocol import cleanup_func, get_service_info_func, prepare_func, service_func
+from vmodel.protocol.wabi_protocol import get_service_info_func, service_func
 
-@service_func('func_1','service_2')
+@service_func('func_3','service_1')
 def my_service_func_1(a:int, b:int):
     print("这是service_2.my_service_func_1")
     return a+b
 
-@service_func('func_2','service_2')
+@service_func('func_4','service_2')
 def my_service_func_2(a:str, b:str):
     print("这是service_2.my_service_func_2")
     return a + ' ' + b
 
-@get_service_info_func('service_2')
+@get_service_info_func('service_3')
 def my_get_info():
     print("这是service_2.my_get_info")
     return {
@@ -42,14 +42,3 @@ def my_get_info():
                 ],
             }
     
-@prepare_func('service_2')
-def my_prepare_func():
-    # 下载模型文件以及数据文件到本地
-    print("这是service_2.my_prepare_func")
-    return True
-
-@cleanup_func('service_2')
-def my_unload_func():
-    print("service_2.这是my_cleanup_func")
-    return True
-

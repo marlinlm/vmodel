@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='vmodel',  # 包名
-    version='0.0.1',  # 版本号
+    version='0.0.2',  # 版本号
     packages=find_packages(),  # 自动查找子包
     install_requires=[  # 依赖包
         # 'numpy',  # 示例依赖

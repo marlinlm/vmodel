@@ -1,7 +1,6 @@
 from importlib import import_module
 
-from vmodel.protocol.service_protocol import ServiceProtocol
-from vmodel.protocol.service_registory import get_service_protocol
+from vmodel.protocol.service_protocol import ServiceProtocol, get_service_protocol
 
 class VModel:
     def __init__(self, config:list):
@@ -14,3 +13,9 @@ class VModel:
         if not protocol:
             raise NotImplementedError(f'Service with name {service} does not exists.')
         return protocol.run_and_dump(func_name=func_name, param = param)    
+    
+    def get_service_info(self, service:str):
+        protocol:ServiceProtocol = get_service_protocol(service)
+        if not protocol:
+            raise NotImplementedError(f'Service with name {service} does not exists.')
+        return protocol.get_service_info() 

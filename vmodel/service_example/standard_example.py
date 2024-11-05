@@ -1,7 +1,6 @@
-# 这是一个标准协议的实例
 from vmodel.protocol.standard_protocol import cleanup_func, get_service_info_func, load_func, prepare_func, test_func, unload_func, service_func
 
-# 如果使用简化协议 请导入 from protocol.simpler_protocol import cleanup_func, get_service_info_func, prepare_func, service_func
+# 如果使用简化协议 请导入 from vmodel.protocol.simpler_protocol import cleanup_func, get_service_info_func, prepare_func, service_func
 
 # 服务接口注解
 @service_func('func_1','service_1')
@@ -225,3 +224,4 @@ def my_cleanup_func():
     
     print("service_1.这是my_cleanup_func")
     return True
+
